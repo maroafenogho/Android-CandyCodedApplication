@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -26,6 +27,19 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
     private Candy[] candies;
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.:
+                Intent infoIntent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(infoIntent);
+//                return true;
+//        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
     private CandyDbHelper candyDbHelper = new CandyDbHelper(this);
 
     @Override
